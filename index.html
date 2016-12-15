@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="">
 	<link rel="stylesheet" href="css/proeduka.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Allerta" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- <link rel="stylesheet" media="(max-width: 800px)" href="css/media-querie.css"> -->
 	
 </head>
@@ -18,7 +19,9 @@
 			<img src="images/invie.png" alt="ProEduka logotipo" width="186" height="60" >
 		</figure>
 
-		<nav class="menu"><!--menu-->
+		<span id="burger-button" class="burger-button icon-menu"></span>
+
+		<nav id="menu" class="menu"><!--menu-->
 			<ul>
 				<li><a href="index.html"> Home</a>
 				</li>
@@ -119,9 +122,17 @@
 		</form>
 	</div>
 		
-		
-
-		
 	</footer>
+
+	<script>
+		var $burgerButton = document.getElementById('burger-button');
+		var $menu = document.getElementById('menu');
+
+		$burgerButton.addEventListener('touchstart', toggleMenu);
+
+		function toggleMenu () {
+			$menu.classList.toggle('active')
+		};
+	</script>
 </body>
 </html>
