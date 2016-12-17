@@ -6,16 +6,18 @@
 	<title>ProEduka - Precios</title>
 	<link rel="stylesheet" href="">
 	<link rel="stylesheet" href="css/proeduka.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Allerta" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Allerta" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
 </head>
-<body>
+<body class="precios">
 	<header id="header" class="header background">
 	<div class="contenedor">
 	<figure class="logotipo"> <!-- logotipo -->
 			<img src="images/invie.png" alt="ProEduka logotipo" width="186" height="60" >
 		</figure>
+		<span id="burger-button" class="burger-button icon-menu"></span>
 
-		<nav class="menu"><!--menu-->
+		<nav class="menu" id="menu"><!--menu-->
 			<ul>
 				<li><a href="index.html"> Home</a>
 				</li>
@@ -114,6 +116,57 @@
 		</form>
 	</div>
 	</footer>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+	<script>
+		var $burgerButton = document.getElementById('burger-button');
+		var $menu = document.getElementById('menu');
+
+		var consulta = window.matchMedia('(max-width: 500px)');
+		consulta.addListener(mediaQuerie);
+
+		function mediaQuerie() {
+			
+			if (consulta.matches) {
+				$burgerButton.addEventListener('touchstart', toggleMenu);
+
+			console.log('SISISISISISI se cumplio la condicion');
+
+			}else {
+				$burgerButton.removeEventListener('touchstart', toggleMenu);
+			console.log('NO NONONONONO cumplio la condicion');
+			
+			}
+
+		};
+		
+		mediaQuerie();
+
+		
+
+		function toggleMenu () {
+			$menu.classList.toggle('active');
+		};
+
+		function showMenu () {
+			$menu.classList.add('active');
+		};
+		function hideMenu () {
+			$menu.classList.remove('active');
+		};
+
+		//lazy loading
+		var bLazy = new Blazy({
+    		selector: 'img'
+		});
+
+		//gestos touch
+		var $body = document.body;
+		var gestos = new Hammer($body);
+		gestos.on('swipeleft', hideMenu);
+		gestos.on('swiperight', showMenu);
+	</script>
 	
 </body>
 
