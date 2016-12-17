@@ -75,6 +75,7 @@ input:focus, textarea:focus{
 	background: lightgray;
 }
 .background{
+	background-color: #466173;
 	background-image: url('../images/background.png');
 	color: white;
 }
@@ -255,17 +256,30 @@ input:focus, textarea:focus{
 	line-height: 40px;
 	border-radius: 50%;
 	background: red;
-	display: inline-block;
+	
 	text-align: center;
 	cursor: pointer;
-	position: absolute;
+	position: fixed;
 	left: 20px;
 	top: 20px;
 	z-index: 3;
 	/* #395667*/
+	display: none;
+}
+.video-demo{
+	max-width: 500px;
+	width: 100%;
+	/* margin: 0 auto 80px; */
+	border: 5px solid #3c5b6e;
+}
+.video-demo-contenedor{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 80px;
 }
 
 @media screen and (max-width: 800px){
+
 	/* PORTADA */
 	.titulo{
 		font-size: 45px;
@@ -284,6 +298,9 @@ input:focus, textarea:focus{
 	/* PORTADA */
 
 	/* GUITARRAS */
+	.video-demo-contenedor{
+		margin-bottom: 30px;
+	}
 
 	.guitarras{
 		text-align: center;
@@ -315,6 +332,16 @@ input:focus, textarea:focus{
 
 
 	/* GUITARRAS */
+
+	/*precios*/
+	.tabla .contenedor{
+		overflow: auto;
+		border: 1px solid #273b47;
+
+	}
+	.tabla {
+		margin: 50px 20px;
+	}
 }
 
 @media screen and (max-width: 767px){
@@ -375,16 +402,41 @@ input:focus, textarea:focus{
 		padding: 0;
 	}
 
+
+	/*guitarras*/
+	/*.video-demo{
+		margin: 0 10px;
+	}*/
+
 }
 
 @media screen and (max-width: 500px){
+	.precios .header .logotipo{
+		margin: 50px 0;
+	}
+	.video-demo-contenedor{
+		margin: 0 10px 30px 10px;
+	}
+	.burger-button{
+		display: block;
+	}
 	/* PORTADA */
 	.portada .contenedor{
 		position: static;
 	}
+	.portada .button{
+		display: block;
+	}
+
+	.header .contenedor{
+		position: static;
+	}
+	.header{
+		position: static;
+	}
 	.menu{
 		background: rgba(255, 60, 88, .8);
-		position: absolute;
+		position: fixed;
 		width: 100%;
 		left: -100%;
 		top: 0;
@@ -436,4 +488,25 @@ input:focus, textarea:focus{
 	}
 	/* GUITARRAS */
 
+	/*footer*/
+	.col2{
+		
+		align-items: stretch;
+	}
+
+
+
+}
+.video-responsive-contenedor{
+	position: relative;
+	padding-top: 56.25%;
+}
+.video-responsive-src{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
 }
