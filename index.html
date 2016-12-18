@@ -135,19 +135,20 @@
 		
 	</footer>
 	
-	<script>
-	   WebFontConfig = {
-	      google: { families: ['Montserrat:400,700', 'Allerta::latin'] }
-	   };
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
 
-	   (function() {
-	      var wf = document.createElement('script');
-	      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
-	      wf.type = 'text/javascript';
-	      wf.async = 'true';
-	      var s = documenr.getElementByTagName('script')[0];
-	      s.parentNode.insertBefore(wf, s);
-	   })();
+	<script>
+
+	  WebFont.load({
+
+	    google: {
+
+	      families: ['Montserrat', 'Allerta']
+
+	    }
+
+	  });
+
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
@@ -200,6 +201,6 @@
 		gestos.on('swipeleft', hideMenu);
 		gestos.on('swiperight', showMenu);
 	</script>
-	<link rel="stylesheet" href="css/invie-min.css">
 </body>
 </html>
+<link rel="stylesheet" href="css/invie-min.css">
